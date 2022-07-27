@@ -10,5 +10,5 @@ resource "aws_ecr_repository" "hopstack-demo" {
 resource "aws_ecr_lifecycle_policy" "hopstack-demo" {
   repository = aws_ecr_repository.hopstack-demo.name
 
-  policy = file(".expire-untagged.json")
+  policy = file("./delete-untaggedimages.json")
 }
